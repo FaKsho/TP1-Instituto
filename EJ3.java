@@ -28,6 +28,13 @@ public class EJ3 {
             productos[i] = Producto.crearProducto(scanner.nextLine());
         }
 
+        // Total
+        double total = 0;
+        for(Producto p: productos) {
+            total = total + p.getPrecio();
+        }
+        System.out.println("\n >>TOTAL $"+total);
+
         // Listado de productos que superan los $1000
         for(Producto p: productos) {
 
