@@ -48,7 +48,7 @@ public class EJ5 {
                     System.exit(0);
             }
 
-            resumenesCuota[i] = "DNI=" +DNI + " Precio Final= $" + precioFinal;
+            resumenesCuota[i] = "DNI=" +DNI + " Servicio= " + tipoServicio + " Precio Final= $" + precioFinal;
         }
 
         for(String s: resumenesCuota) {
