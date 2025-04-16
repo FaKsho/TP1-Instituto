@@ -18,6 +18,8 @@ public class EJ7 {
 
         Scanner scanner = new Scanner(System.in);
         ArrayList<Persona> personasCensadas = new ArrayList<>();
+        int mayorEdad = 0;
+        Persona personaMayorEdad = new Persona();
 
         System.out.println("Ingrese los datos de la persona: DNI EDAD y SEXO (F/M)");
         String[] strArr = scanner.nextLine().split("\\s+");
@@ -42,6 +44,11 @@ public class EJ7 {
 
         for(Persona s: personasCensadas){
 
+            if(s.getEdad() > mayorEdad) {
+                mayorEdad = s.getEdad();
+                personaMayorEdad = s;
+            }
+
             if(s.getSexo().equalsIgnoreCase("F")) cantidadMujeres++;
             else {
                 cantidadHombres++;
@@ -59,6 +66,7 @@ public class EJ7 {
                 "\nHombres entre 16 y 65 años: ");
         System.out.printf("%.2f", porcentajeRangoEdad*100);
         System.out.print("%\n");
+        System.out.print("Persona con mayor edad: " + personaMayorEdad.toString());
     }
 }
 
@@ -100,5 +108,9 @@ class Persona {
 
     public void setSexo(String sexo) {
         this.sexo = sexo;
+    }
+
+    public String toString() {
+        return "DNI=" + DNI + " " + edad + " años " + sexo;
     }
 }
